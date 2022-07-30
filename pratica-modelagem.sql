@@ -61,8 +61,8 @@ CREATE TABLE "bankAccount" (
 	"customerId" integer NOT NULL REFERENCES customers(id),
 	"accountNumber" text NOT NULL,
 	agency text NOT NULL,
-	"openDate" TIMESTAMP NOT NULL DEFAULT NOW(),
-	"closeDate" TIMESTAMP DEFAULT NOW()
+	"openDate" DATE NOT NULL DEFAULT NOW(),
+	"closeDate" DATE DEFAULT NOW()
 );
 
 -- table transactions
