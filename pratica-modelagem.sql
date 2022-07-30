@@ -60,7 +60,7 @@ CREATE TABLE "bankAccount" (
 	id serial NOT NULL PRIMARY KEY,
 	"customerId" integer NOT NULL REFERENCES customers(id),
 	"accountNumber" text NOT NULL,
-	agency integer NOT NULL,
+	agency text NOT NULL,
 	"openDate" TIMESTAMP NOT NULL DEFAULT NOW(),
 	"closeDate" TIMESTAMP DEFAULT NOW()
 );
@@ -90,10 +90,10 @@ CREATE TABLE "creditCards" (
 	id serial NOT NULL PRIMARY KEY,
 	"bankAccountId" integer NOT NULL REFERENCES "bankAccount"(id),
 	name text NOT NULL,
-	number integer NOT NULL UNIQUE,
-	"securityCode" integer NOT NULL,
-	"expirationMonth" integer NOT NULL,
-	"expirationYear" integer NOT NULL,
-	password integer NOT NULL,
+	number text NOT NULL UNIQUE,
+	"securityCode" varchar(3) NOT NULL,
+	"expirationMonth" varchar(2) NOT NULL,
+	"expirationYear" varchar(2) NOT NULL,
+	password text NOT NULL,
 	"limit" integer NOT NULL
 );
